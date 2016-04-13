@@ -3,6 +3,3 @@ This repo will have my work related to learning machine learning with Lending cl
 
 * Start with downloading csv files from Lending Club's Statistics page
 * Then run the process csvs script
-
-* Simple analysis
-** Newbie stuff, just looking at less than a handful of variables at a time. Looking for any patterns by eye
