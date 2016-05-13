@@ -1,0 +1,10 @@
+import steps:
+	Download all CSV's
+	Delete first line in each CSV
+	Clear out the loans database
+	Run command for each csv:
+	D:\Mongo\bin\mongoimport.exe /h localhost /p 27017 /d lc /c loans /numInsertionWorkers 2 /type csv /headerline /file: {filename}.csv
+
+post import processing:
+	Run fix dates function
+	This can take 10-20 mins
