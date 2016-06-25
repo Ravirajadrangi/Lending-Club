@@ -24,11 +24,9 @@ notes_for_sale.columns = ['LoanId', 'NoteId', 'OrderId', 'OutstandingPrincipal',
        'PrincipalPlusInterest', 'ApplicationType']
 
 notes_for_sale = notes_for_sale[notes_for_sale.AskPrice > 1]
-notes_for_sale.DaysSinceLastPayment = pd.to_numeric(notes_for_sale.DaysSinceLastPayment, errors="coerce")
+notes_for_sale.DaysSinceLastPayment =  notes_for_sale.DaysSinceLastPayment.convert_objects(convert_numeric=True)
 notes_for_sale.DateListed = pd.to_datetime(notes_for_sale.DateListed, errors="coerce", format="%m/%d/%Y")
-notes_for_sale.YTM = pd.to_numeric(notes_for_sale.YTM, errors="coerce")
-notes_for_sale.DaysSinceLastPayment = pd.to_numeric(notes_for_sale.DaysSinceLastPayment, errors="coerce")
-notes_for_sale.CreditScoreTrend = notes_for_sale.CreditScoreTrend.astype('category')
+notes_for_sale.YTM =  notes_for_sale.YTM.convert_objects(convert_numeric=True)
 
 print( 'Notes for sale:', len(notes_for_sale) )
 
@@ -37,7 +35,7 @@ buy_query = 'Status == "Current" & YTM > 3 & CreditScoreTrend == "UP" & NeverLat
 notes_to_buy = notes_for_sale.query( buy_query )
 print( 'Notes matching filters:', len(notes_to_buy) )
 
-notes_to_buy = notes_to_buy.sort_values('FICO', ascending=False).head(5)
+notes_to_buy = notes_to_buy.sort('FICO', ascending=False).head(5)
 
 # Get list of notes owned
 r = requests.get('https://api.lendingclub.com/api/investor/v1/accounts/' + args.InvestorID + '/detailednotes', headers={'Authorization': args.APIKey, 'Accept':'application/json'}) 
