@@ -48,7 +48,7 @@ for loanId,rowData in bad_notes.iterrows():
 
 
 
-expire_date = datetime.datetime.now() + datetime.timedelta(days=7)
+expire_date = datetime.datetime.now() + datetime.timedelta(days=4)
 sell_request = {"aid": args.InvestorID, "expireDate": expire_date.strftime('%m/%d/%Y'), "notes":notes_to_sell}
 
 
