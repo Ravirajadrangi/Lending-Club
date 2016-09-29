@@ -1,6 +1,11 @@
 # Lending-Club
-This repo will have my work related to learning machine learning with Lending club data. I had some of this work done already but I just learned how to make those pretty IPython notebooks (Anaconda comes with Jupyter) so I'm more excited to share. 
+This repo has all the work I've done related to Lending Club. 
 
-* Start with downloading csv files from Lending Club's Statistics page
-* Then run "process csv files" 
-* Then run "Mark bad loans from secondary market"
+## API
+Simple scripts to buy/sell loans via the LendingClub / FolioFN API.  They can be run on a raspberry pi with Python/Pandas .17
+
+## Old Stuff
+What I originally started with. This is PHP+Mongo+CasperJS. There's a nice PDF writeup of all this in that folder. 
+
+## Simple Analysis
+Looking at a few of the loan data features at a time with visualizations
